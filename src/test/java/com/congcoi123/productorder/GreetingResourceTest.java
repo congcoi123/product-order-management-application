@@ -1,4 +1,4 @@
-package com.congcoi123;
+package com.congcoi123.productorder;
 
 import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.Test;

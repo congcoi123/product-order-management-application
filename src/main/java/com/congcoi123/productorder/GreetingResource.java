@@ -1,4 +1,4 @@
-package com.congcoi123;
+package com.congcoi123.productorder;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
