@@ -14,12 +14,12 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Embeddable
-public class ProductTagEntityKey implements Serializable {
+public class TransactionEntityKey implements Serializable {
   @ManyToOne
-  private ProductEntity product;
+  private UserEntity user;
 
   @ManyToOne
-  private TagEntity tag;
+  private OrderEntity order;
 
   @Override
   public boolean equals(Object o) {
@@ -29,12 +29,12 @@ public class ProductTagEntityKey implements Serializable {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ProductTagEntityKey that = (ProductTagEntityKey) o;
-    return Objects.equals(product, that.product) && Objects.equals(tag, that.tag);
+    TransactionEntityKey that = (TransactionEntityKey) o;
+    return Objects.equals(user, that.user) && Objects.equals(order, that.order);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(product, tag);
+    return Objects.hash(user, order);
   }
 }

@@ -21,6 +21,7 @@ import lombok.Setter;
 public class TagEntity {
   @Id
   private long id;
+
   private String title;
   private String metaTitle;
   private String slug;

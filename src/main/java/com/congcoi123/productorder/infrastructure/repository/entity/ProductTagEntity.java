@@ -18,9 +18,11 @@ import lombok.Setter;
 public class ProductTagEntity {
   @EmbeddedId
   private ProductTagEntityKey primaryKey;
+
   @ManyToOne
   @JoinColumn(insertable = false, updatable = false)
   private ProductEntity product;
+
   @ManyToOne
   @JoinColumn(insertable = false, updatable = false)
   private TagEntity tag;

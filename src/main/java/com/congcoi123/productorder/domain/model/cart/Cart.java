@@ -11,8 +11,8 @@ import lombok.Data;
 @AllArgsConstructor(access = AccessLevel.PROTECTED)
 public class Cart {
   private final long id;
-  private final int status;
   private long userId;
+  private int status;
   @NotBlank
   private String sessionId;
   @NotBlank

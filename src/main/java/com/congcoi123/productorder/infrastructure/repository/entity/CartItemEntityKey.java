@@ -1,9 +1,13 @@
 package com.congcoi123.productorder.infrastructure.repository.entity;
 
+import com.congcoi123.productorder.domain.validator.ValidatorMessage;
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.Objects;
 import javax.persistence.Embeddable;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,12 +18,12 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Embeddable
-public class ProductTagEntityKey implements Serializable {
+public class CartItemEntityKey implements Serializable {
   @ManyToOne
-  private ProductEntity product;
+  private CartEntity cart;
 
   @ManyToOne
-  private TagEntity tag;
+  private ProductEntity product;
 
   @Override
   public boolean equals(Object o) {
@@ -29,12 +33,13 @@ public class ProductTagEntityKey implements Serializable {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ProductTagEntityKey that = (ProductTagEntityKey) o;
-    return Objects.equals(product, that.product) && Objects.equals(tag, that.tag);
+    CartItemEntityKey that = (CartItemEntityKey) o;
+    return Objects.equals(cart, that.cart) &&
+        Objects.equals(product, that.product);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(product, tag);
+    return Objects.hash(cart, product);
   }
 }
